@@ -31,7 +31,7 @@ user:file_search_path(snakes_web, Dir) :-
     directory_file_path(App, web, Dir).
 
 :- http_handler(root(.),        http_reply_file(snakes_web('index.html'), []), []).
-:- http_handler(root(static),   serve_files_in_directory(snakes_web), [prefix]).
+:- http_handler(root(static), serve_static, [prefix]).
 :- http_handler(root(api/new),  api_new,  [method(post)]).
 :- http_handler(root(api/step), api_step, [method(post)]).
 :- http_handler(root(api/hall), api_hall, [methods([get, post])]).
@@ -127,5 +127,16 @@ prune_games :-
                           retract(game_store(Id, G, S)))
                ;   true
                )).
+
+serve_static(Request) :-
+    (   memberchk(path_info(P0), Request) -> true ; P0 = '' ),
+    (   atom_concat('/', P, P0) -> true ; P = P0 ),
+    \+ sub_atom(P, _, _, _, '..'),
+    app_dir(A),
+    atomic_list_concat([A, '/web/', P], F),
+    exists_file(F), !,
+    http_reply_file(F, [unsafe(true)], Request).
+serve_static(Request) :-
+    http_404([], Request).
 
 :- initialization(server).
