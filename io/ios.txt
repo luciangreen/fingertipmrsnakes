@@ -1,0 +1,402 @@
+fingertipmrsnakes: 200 inputs and outputs, from real runs (swipl io/make_ios.pl writes this file; swipl io/check_ios.pl checks it).
+
+1. advance([3-2, 2-2, 2-1, 2-0], up, [3-3], 6-6, 0)
+   => ok([3-1, 3-2, 2-2, 2-1])
+2. play([none, right, left, down, up, none, none])
+   => [events([[], [crash], [respawn], [], [], [crash], [respawn]]), score(0), level(1)]
+3. choose_dir(up, none, 1)
+   => up
+4. heading([3-2, 2-2, 2-1, 2-0])
+   => right
+5. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+6. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+7. advance([4-3], down, [0-0, 5-5], 6-6, 1)
+   => ok([4-4, 4-3])
+8. play([none, none])
+   => [events([[], []]), score(0), level(1)]
+9. choose_dir(down, up, 2)
+   => down
+10. heading([4-3])
+   => false
+11. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+12. level(3)
+   => [size(20-15), start(3-8), exit(1-13), food(9), walls(112)]
+13. advance([1-4, 0-4], left, [2-1, 2-2, 2-3], 6-6, 1)
+   => crash(1-4)
+14. play([up, none, none, right, left, down, up, none, none])
+   => [events([[], [], [crash], [respawn], [crash], [respawn], [], [], [crash, game_over]]), score(0), level(1)]
+15. choose_dir(left, down, 3)
+   => down
+16. heading([1-4, 0-4])
+   => right
+17. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+18. level(4)
+   => [size(20-15), start(3-2), exit(1-13), food(8), walls(121)]
+19. advance([2-1, 1-1, 1-0], right, [], 6-6, 0)
+   => ok([3-1, 2-1, 1-1])
+20. play([down, up, none, none])
+   => [events([[], [], [crash], [respawn]]), score(0), level(1)]
+21. choose_dir(right, left, 3)
+   => right
+22. heading([2-1, 1-1, 1-0])
+   => right
+23. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+24. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+25. advance([2-2, 1-2], down, [2-1, 2-2, 2-3], 6-6, 0)
+   => crash(2-2)
+26. play([left, down, up, none, none, right, left, down, up, none, none])
+   => [events([[crash], [respawn], [], [], [crash], [respawn], [crash, game_over], [], [], [], []]), score(0), level(1)]
+27. choose_dir(down, right, 1)
+   => right
+28. heading([2-2, 1-2])
+   => right
+29. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+30. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+31. advance([3-3, 2-3, 2-2], left, [], 6-6, 1)
+   => crash(3-3)
+32. play([right, left, down, up, none, none])
+   => [events([[crash], [respawn], [], [], [crash], [respawn]]), score(0), level(1)]
+33. choose_dir(left, none, 2)
+   => left
+34. heading([3-3, 2-3, 2-2])
+   => right
+35. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+36. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+37. advance([4-4, 3-4, 3-3, 3-2], right, [3-3], 6-6, 1)
+   => ok([5-4, 4-4, 3-4, 3-3, 3-2])
+38. play([down])
+   => [events([[]]), score(0), level(1)]
+39. choose_dir(right, up, 2)
+   => up
+40. heading([4-4, 3-4, 3-3, 3-2])
+   => right
+41. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+42. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+43. advance([1-1], up, [0-0, 5-5], 6-6, 0)
+   => ok([1-0])
+44. play([left, left, left, left, left, left, left, left])
+   => [events([[crash], [respawn], [crash], [respawn], [crash, game_over], [], [], []]), score(0), level(1)]
+45. choose_dir(up, down, 3)
+   => up
+46. heading([1-1])
+   => false
+47. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+48. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+49. advance([1-2, 0-2, 0-1, 0-0], left, [3-3], 6-6, 0)
+   => crash(1-2)
+50. play([right, right, right])
+   => [events([[crash], [respawn], [crash]]), score(0), level(1)]
+51. choose_dir(left, left, 1)
+   => left
+52. heading([1-2, 0-2, 0-1, 0-0])
+   => right
+53. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+54. level(3)
+   => [size(20-15), start(3-8), exit(1-13), food(9), walls(112)]
+55. advance([2-3], right, [0-0, 5-5], 6-6, 1)
+   => ok([3-3, 2-3])
+56. play([none, none, none, none, none, none, none, none, none, none])
+   => [events([[], [], [crash], [respawn], [], [], [crash], [respawn], [], []]), score(0), level(1)]
+57. choose_dir(right, right, 1)
+   => right
+58. heading([2-3])
+   => false
+59. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+60. level(4)
+   => [size(20-15), start(3-2), exit(1-13), food(8), walls(121)]
+61. advance([3-4, 2-4], up, [2-1, 2-2, 2-3], 6-6, 1)
+   => ok([3-3, 3-4, 2-4])
+62. play([none, none, none, none, none])
+   => [events([[], [], [crash], [respawn], []]), score(0), level(1)]
+63. choose_dir(up, none, 2)
+   => up
+64. heading([3-4, 2-4])
+   => right
+65. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+66. level(3)
+   => [size(20-15), start(3-8), exit(1-13), food(9), walls(112)]
+67. advance([4-1, 3-1, 3-0], down, [], 6-6, 0)
+   => ok([4-2, 4-1, 3-1])
+68. play([up, up, up, up, up, up, up, up, up, up, up, up])
+   => [events([[], [], [crash], [respawn], [], [], [crash], [respawn], [], [], [crash, game_over], []]), score(0), level(1)]
+69. choose_dir(down, up, 3)
+   => down
+70. heading([4-1, 3-1, 3-0])
+   => right
+71. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+72. level(4)
+   => [size(20-15), start(3-2), exit(1-13), food(8), walls(121)]
+73. advance([4-2, 3-2], right, [2-1, 2-2, 2-3], 6-6, 0)
+   => ok([5-2, 4-2])
+74. play([none, none, up, down, left, right, none])
+   => [events([[], [], [crash], [respawn], [crash], [respawn], []]), score(0), level(1)]
+75. choose_dir(right, down, 3)
+   => down
+76. heading([4-2, 3-2])
+   => right
+77. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+78. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+79. advance([1-3, 0-3, 0-2], up, [], 6-6, 1)
+   => ok([1-2, 1-3, 0-3, 0-2])
+80. play([none, up])
+   => [events([[], []]), score(0), level(1)]
+81. choose_dir(up, left, 1)
+   => left
+82. heading([1-3, 0-3, 0-2])
+   => right
+83. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+84. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+85. advance([2-4, 1-4, 1-3, 1-2], down, [3-3], 6-6, 1)
+   => ok([2-5, 2-4, 1-4, 1-3, 1-2])
+86. play([up, down, left, right, none, none, up, down, left])
+   => [events([[], [], [crash], [respawn], [], [], [crash], [respawn], [crash, game_over]]), score(0), level(1)]
+87. choose_dir(down, right, 2)
+   => right
+88. heading([2-4, 1-4, 1-3, 1-2])
+   => right
+89. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+90. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+91. advance([3-1], left, [0-0, 5-5], 6-6, 0)
+   => ok([2-1])
+92. play([down, left, right, none])
+   => [events([[], [crash], [respawn], []]), score(0), level(1)]
+93. choose_dir(left, none, 2)
+   => left
+94. heading([3-1])
+   => false
+95. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+96. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+97. advance([3-2, 2-2, 2-1, 2-0], up, [3-3], 6-6, 0)
+   => ok([3-1, 3-2, 2-2, 2-1])
+98. play([left, right, none, none, up, down, left, right, none, none, up])
+   => [events([[crash], [respawn], [], [], [crash], [respawn], [crash, game_over], [], [], [], []]), score(0), level(1)]
+99. choose_dir(up, up, 3)
+   => up
+100. heading([3-2, 2-2, 2-1, 2-0])
+   => right
+101. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+102. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+103. advance([4-3], down, [0-0, 5-5], 6-6, 1)
+   => ok([4-4, 4-3])
+104. play([right, none, none, up, down, left])
+   => [events([[crash], [respawn], [], [], [crash], [respawn]]), score(0), level(1)]
+105. choose_dir(down, down, 1)
+   => down
+106. heading([4-3])
+   => false
+107. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+108. level(3)
+   => [size(20-15), start(3-8), exit(1-13), food(9), walls(112)]
+109. advance([1-4, 0-4], left, [2-1, 2-2, 2-3], 6-6, 1)
+   => crash(1-4)
+110. play([down])
+   => [events([[]]), score(0), level(1)]
+111. choose_dir(left, left, 1)
+   => left
+112. heading([1-4, 0-4])
+   => right
+113. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+114. level(4)
+   => [size(20-15), start(3-2), exit(1-13), food(8), walls(121)]
+115. advance([2-1, 1-1, 1-0], right, [], 6-6, 0)
+   => ok([3-1, 2-1, 1-1])
+116. play([left, none, up, left, none, up, left, none])
+   => [events([[crash], [respawn], [], [crash], [respawn], [], [crash, game_over], []]), score(0), level(1)]
+117. choose_dir(right, right, 2)
+   => right
+118. heading([2-1, 1-1, 1-0])
+   => right
+119. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+120. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+121. advance([2-2, 1-2], down, [2-1, 2-2, 2-3], 6-6, 0)
+   => crash(2-2)
+122. play([right, none, down])
+   => [events([[crash], [respawn], []]), score(0), level(1)]
+123. choose_dir(down, none, 3)
+   => down
+124. heading([2-2, 1-2])
+   => right
+125. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+126. level(4)
+   => [size(20-15), start(3-2), exit(1-13), food(8), walls(121)]
+127. advance([3-3, 2-3, 2-2], left, [], 6-6, 1)
+   => crash(3-3)
+128. play([none, up, left, none, up, left, none, up, left, none])
+   => [events([[], [], [crash], [respawn], [], [crash], [respawn], [], [crash, game_over], []]), score(0), level(1)]
+129. choose_dir(left, up, 3)
+   => up
+130. heading([3-3, 2-3, 2-2])
+   => right
+131. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+132. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+133. advance([4-4, 3-4, 3-3, 3-2], right, [3-3], 6-6, 1)
+   => ok([5-4, 4-4, 3-4, 3-3, 3-2])
+134. play([none, down, right, none, down])
+   => [events([[], [], [], [], []]), score(0), level(1)]
+135. choose_dir(right, down, 1)
+   => down
+136. heading([4-4, 3-4, 3-3, 3-2])
+   => right
+137. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+138. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+139. advance([1-1], up, [0-0, 5-5], 6-6, 0)
+   => ok([1-0])
+140. play([up, left, none, up, left, none, up, left, none, up, left, none])
+   => [events([[], [crash], [respawn], [], [crash], [respawn], [], [crash, game_over], [], [], [], []]), score(0), level(1)]
+141. choose_dir(up, left, 2)
+   => left
+142. heading([1-1])
+   => false
+143. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+144. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+145. advance([1-2, 0-2, 0-1, 0-0], left, [3-3], 6-6, 0)
+   => crash(1-2)
+146. play([none, down, none, down, none, down, none])
+   => [events([[], [], [crash], [respawn], [], [], [crash]]), score(0), level(1)]
+147. choose_dir(left, right, 2)
+   => left
+148. heading([1-2, 0-2, 0-1, 0-0])
+   => right
+149. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+150. level(3)
+   => [size(20-15), start(3-8), exit(1-13), food(9), walls(112)]
+151. advance([2-3], right, [0-0, 5-5], 6-6, 1)
+   => ok([3-3, 2-3])
+152. play([none, left])
+   => [events([[], [crash]]), score(0), level(1)]
+153. choose_dir(right, none, 3)
+   => right
+154. heading([2-3])
+   => false
+155. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+156. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+157. advance([3-4, 2-4], up, [2-1, 2-2, 2-3], 6-6, 1)
+   => ok([3-3, 3-4, 2-4])
+158. play([up, right, up, right, up, right, up, right, up])
+   => [events([[], [crash], [respawn], [crash], [respawn], [crash, game_over], [], [], []]), score(0), level(1)]
+159. choose_dir(up, up, 1)
+   => up
+160. heading([3-4, 2-4])
+   => right
+161. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+162. level(3)
+   => [size(20-15), start(3-8), exit(1-13), food(9), walls(112)]
+163. advance([4-1, 3-1, 3-0], down, [], 6-6, 0)
+   => ok([4-2, 4-1, 3-1])
+164. play([down, none, down, none])
+   => [events([[], [], [crash], [respawn]]), score(0), level(1)]
+165. choose_dir(down, down, 1)
+   => down
+166. heading([4-1, 3-1, 3-0])
+   => right
+167. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+168. level(4)
+   => [size(20-15), start(3-2), exit(1-13), food(8), walls(121)]
+169. advance([4-2, 3-2], right, [2-1, 2-2, 2-3], 6-6, 0)
+   => ok([5-2, 4-2])
+170. play([left, none, left, none, left, none, left, none, left, none, left])
+   => [events([[crash], [respawn], [crash], [respawn], [crash, game_over], [], [], [], [], [], []]), score(0), level(1)]
+171. choose_dir(right, left, 2)
+   => right
+172. heading([4-2, 3-2])
+   => right
+173. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+174. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+175. advance([1-3, 0-3, 0-2], up, [], 6-6, 1)
+   => ok([1-2, 1-3, 0-3, 0-2])
+176. play([right, up, right, up, right, up])
+   => [events([[crash], [respawn], [crash], [respawn], [crash, game_over], []]), score(0), level(1)]
+177. choose_dir(up, right, 3)
+   => right
+178. heading([1-3, 0-3, 0-2])
+   => right
+179. turns(up)
+   => [left(left), right(right), opposite(down), delta(0- -1)]
+180. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+181. advance([2-4, 1-4, 1-3, 1-2], down, [3-3], 6-6, 1)
+   => ok([2-5, 2-4, 1-4, 1-3, 1-2])
+182. play([down])
+   => [events([[]]), score(0), level(1)]
+183. choose_dir(down, none, 3)
+   => down
+184. heading([2-4, 1-4, 1-3, 1-2])
+   => right
+185. turns(down)
+   => [left(right), right(left), opposite(up), delta(0-1)]
+186. level(5)
+   => [size(20-15), start(15-8), exit(16-13), food(9), walls(117)]
+187. advance([3-1], left, [0-0, 5-5], 6-6, 0)
+   => ok([2-1])
+188. play([left, up, none, left, up, none, left, up])
+   => [events([[crash], [respawn], [], [crash], [respawn], [], [crash, game_over], []]), score(0), level(1)]
+189. choose_dir(left, up, 1)
+   => up
+190. heading([3-1])
+   => false
+191. turns(left)
+   => [left(down), right(up), opposite(right), delta(-1-0)]
+192. level(1)
+   => [size(20-15), start(1-3), exit(17-13), food(10), walls(117)]
+193. advance([3-2, 2-2, 2-1, 2-0], up, [3-3], 6-6, 0)
+   => ok([3-1, 3-2, 2-2, 2-1])
+194. play([right, down, none])
+   => [events([[crash], [respawn], []]), score(0), level(1)]
+195. choose_dir(up, down, 2)
+   => up
+196. heading([3-2, 2-2, 2-1, 2-0])
+   => right
+197. turns(right)
+   => [left(up), right(down), opposite(left), delta(1-0)]
+198. level(2)
+   => [size(20-15), start(3-2), exit(12-13), food(9), walls(116)]
+199. advance([4-3], down, [0-0, 5-5], 6-6, 1)
+   => ok([4-4, 4-3])
+200. play([none, left, up, none, left, up, none, left, up, none])
+   => [events([[], [crash], [respawn], [], [crash], [respawn], [], [crash, game_over], [], []]), score(0), level(1)]

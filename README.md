@@ -50,3 +50,7 @@ The `spec_move` tests use the grids from the spec file (digits = segments with `
 * In test 1, the "left" and "right" examples have their labels swapped: the "left" grid moves the head to the right. The single-segment "left get longer" example also moves right. The tests keep the grids and use the label that matches the move.
 * The "delete screen" block in the fingertipmrsnakes spec appears to be copied from the retromr spec, so it is not used here.
 * The spec file itself has unbalanced brackets around tests 2 and 3, so it is kept as a reference and not consulted.
+
+## Inputs and outputs
+
+`io/ios.txt` lists 200 inputs and the outputs they give, from real runs of this repo's predicates (which predicates, and how the inputs are made, is in `io/cases.pl`; the inputs are made the same way every time). `swipl io/check_ios.pl` runs them again and fails if any output changed; the "Inputs and outputs" workflow does the same on every push. If a change is meant, run `swipl io/make_ios.pl` and check the diff.
